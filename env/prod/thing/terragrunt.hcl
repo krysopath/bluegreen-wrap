@@ -1,5 +1,5 @@
 terraform {
-  source = "../../..//modules/resource"
+  source = "../../..//modules/remote"
 }
 
 include {
@@ -7,6 +7,5 @@ include {
 }
 
 inputs = {
-    name = "green"
-    path = "this"
+    url = "https://randomuser.me/api/"
 }

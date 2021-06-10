@@ -9,16 +9,16 @@ include {
 dependency "thing" {
   config_path = "../thing"
   mock_outputs = {
-    result = "temp-a"
+    data = {
+        json = "hello"
+    }
   }
 }
 
-locals {
-    _path = "${get_terragrunt_dir()}/artifact"
-}
+locals {}
 
 inputs = {
     states = ["blue"]
-    path   = "${local._path}/${dependency.thing.outputs.result}"
+    path   = "${get_terragrunt_dir()}/artifact/${dependency.thing.outputs.data.json}"
 
 }
