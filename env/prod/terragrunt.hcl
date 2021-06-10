@@ -1,7 +1,7 @@
 generate "provider" {
-    path      = "state.tf"
-    if_exists = "overwrite"
-    contents = <<EOF
+  path      = "state.tf"
+  if_exists = "overwrite"
+  contents  = <<EOF
 terraform {
     backend "local" {}
 }
@@ -16,5 +16,5 @@ remote_state {
 }
 
 inputs = {
-    file_permission = "0770"
+  file_permission = "0770"
 }

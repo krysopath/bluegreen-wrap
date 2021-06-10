@@ -7,5 +7,5 @@ include {
 }
 
 inputs = {
-    url = "https://randomuser.me/api/"
+  url = "https://randomuser.me/api/"
 }

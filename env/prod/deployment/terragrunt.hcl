@@ -10,7 +10,7 @@ dependency "thing" {
   config_path = "../thing"
   mock_outputs = {
     data = {
-        json = "hello"
+      username = "hello"
     }
   }
 }
@@ -18,7 +18,8 @@ dependency "thing" {
 locals {}
 
 inputs = {
-    states = ["blue"]
-    path   = "${get_terragrunt_dir()}/artifact/${dependency.thing.outputs.data.json}"
+  states  = ["green", "blue"]
+  path    = "${get_terragrunt_dir()}/artifact/${dependency.thing.outputs.data.username}"
+  content = dependency.thing.outputs.data
 
 }
